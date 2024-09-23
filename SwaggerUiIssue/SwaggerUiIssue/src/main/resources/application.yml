@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: SwaggerUiIssue
+  resources:
+    cache:
+      period: 0  # Disable caching for static resources
+server:
+  port: 8082
+springdoc:
+  swagger-ui:
+    configUrl: /swagger-config.json
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  application:
+    name: devProfile
+server:
+  port: 8082
+springdoc:
+  swagger-ui:
+    configUrl: /swagger-config-dev.json
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: uat
+  application:
+    name: uatProfile
+server:
+  port: 8082
